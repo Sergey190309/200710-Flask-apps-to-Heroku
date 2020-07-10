@@ -1,19 +1,9 @@
 import os
 
-from flask import (
-    Flask,
-    # request
-)
-from flask_restful import (
-    # Resource,
-    Api,
-    # reqparse
-)
+from flask import Flask
+from flask_restful import Api
 
-from flask_jwt import (
-    JWT,
-    # jwt_required
-)
+from flask_jwt import JWT
 
 # from db import db
 from security import authenticate, identity
@@ -23,9 +13,12 @@ from resources.store import Store, StoreList
 
 
 app = Flask(__name__)
+
 # Flask application configurations:
+app.config['DEBUG'] = True
 # Place where to keep SQLite data:
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.sql')
+app.config['SQLALCHEMY_DATABASE_URI'] = \
+    os.environ.get('DATABASE_URL', 'sqlite:///data.sql')
 # Keep SQLAlcheny responsiblt in tracking changes:
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

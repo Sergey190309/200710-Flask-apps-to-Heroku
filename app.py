@@ -13,6 +13,7 @@ from flask_jwt import (
     # jwt_required
 )
 
+from db import db
 from security import authenticate, identity
 from resources.user import UserRegister, UserList
 from resources.item import Item, ItemList

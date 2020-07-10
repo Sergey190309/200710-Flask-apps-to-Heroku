@@ -25,10 +25,7 @@ from resources.store import Store, StoreList
 app = Flask(__name__)
 # Flask application configurations:
 # Place where to keep SQLite data:
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-    'DATABASE_URL',
-    'sqlite:///data.sql'
-)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.sql')
 # Keep SQLAlcheny responsiblt in tracking changes:
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

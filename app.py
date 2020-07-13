@@ -29,6 +29,13 @@ api = Api(app)
 # /auth end point
 jwt = JWT(app, authenticate, identity)
 
+
+# Test root message
+@app.route('/')
+def home():
+    return 'Home page!'
+
+
 # Add resources to the application
 api.add_resource(Item, '/item/<string:name>')
 api.add_resource(Store, '/store/<string:name>')

@@ -33,7 +33,7 @@ jwt = JWT(app, authenticate, identity)
 # Test root message
 @app.route('/')
 def home():
-    return 'Home page!'
+    return "<h1 style='color:red'>Home page!</h1>"
 
 
 # Add resources to the application
